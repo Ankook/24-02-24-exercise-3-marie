@@ -1,16 +1,30 @@
-# This is a sample Python script.
+from tkinter import *
+from tkinter import ttk
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+root = Tk()
+root.geometry("300x250+400+200")
+
+root.maxsize(400,300)
+root.resizable(False, False)
+
+# UI options
+paddings = {'padx': 5, 'pady': 5}
+entry_font = {'font': ('Helvetica', 11)}
+
+root.columnconfigure(0, weight=1)
+root.columnconfigure(1, weight=3)
+
+userName = StringVar()
+
+username_label = ttk.Label(root, text="Username:")
+username_label.grid(column=0, row=0, sticky=W, **paddings)
+
+username_entry = ttk.Entry(root, textvariable=userName, **entry_font)
+username_entry.grid(column=1, row=0, sticky=E, **paddings)
+#TOO RENAME COLOUMNS
+
+root.mainloop()
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print('Hello!');
