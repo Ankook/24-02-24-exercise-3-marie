@@ -30,7 +30,6 @@ class App(tk.Tk):
             print('name output has ended')
             self.destroy()
             working_with_files(input_file_name, output_file_name)
-            # TODO разобраться с асинхронностью здесь
 
         def working_with_files(input_file_name, output_file_name):
             input_file = open(input_file_name, 'r')
@@ -59,23 +58,23 @@ class App(tk.Tk):
         input_file_name_string = tk.StringVar()
         output_file_name_string = tk.StringVar()
 
-        #input label
+        # input label
         input_file_name_label = ttk.Label(self, text="Input file:")
         input_file_name_label.grid(column=0, row=1, sticky=tk.W, **paddings)
 
-        #input entry
+        # input entry
         input_file_name_entry = ttk.Entry(self, textvariable=input_file_name_string, **entry_font)
         input_file_name_entry.grid(column=1, columnspan=3, row=1, sticky=tk.E, **paddings)
 
-        #output label
+        # output label
         output_file_name_label = ttk.Label(self, text="Output file:")
         output_file_name_label.grid(column=0, row=2, sticky=tk.W, **paddings)
 
-        #output_entry
+        # output entry
         output_file_name_entry = ttk.Entry(self, textvariable=output_file_name_string, **entry_font)
         output_file_name_entry.grid(column=1, columnspan=3, row=2, sticky=tk.E, **paddings)
 
-        #submit button
+        # submit button
         btn = ttk.Button(text="Click", command=get_names)
         btn.grid(column=1, columnspan=2, row=3, sticky=tk.S, **paddings)
 
