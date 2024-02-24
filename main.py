@@ -43,32 +43,28 @@ def working_with_files(input_file_name, output_file_name):
     print('This program has finished working')
 
 
-
-
-
-
-
-
-
+# heading
+heading = ttk.Label(root,  text='Member Login')
+heading.grid(column=1, row=0, columnspan=2, pady=5, sticky=N)
 
 inputFileNameString = StringVar()
 outputFileNameString = StringVar()
 
 inputFileName_label = ttk.Label(root, text="Input file:")
-inputFileName_label.grid(column=0, row=0, sticky=W, **paddings)
+inputFileName_label.grid(column=0, row=1, sticky=W, **paddings)
 
 inputFileName_entry = ttk.Entry(root, textvariable=inputFileNameString, **entry_font)
-inputFileName_entry.grid(column=1, columnspan=3, row=0, sticky=E, **paddings)
+inputFileName_entry.grid(column=1, columnspan=3, row=1, sticky=E, **paddings)
 
 outputFileName_label = ttk.Label(root, text="Output file:")
-outputFileName_label.grid(column=0, row=1, sticky=W, **paddings)
+outputFileName_label.grid(column=0, row=2, sticky=W, **paddings)
 
 outputFileName_entry = ttk.Entry(root, textvariable=outputFileNameString, **entry_font)
-outputFileName_entry.grid(column=1, columnspan=3, row=1, sticky=E, **paddings)
+outputFileName_entry.grid(column=1, columnspan=3, row=2, sticky=E, **paddings)
 
 
 btn = ttk.Button(text="Click", command=get_names)
-btn.grid(column=1, columnspan=2, row=2, sticky=S, **paddings)
+btn.grid(column=1, columnspan=2, row=3, sticky=S, **paddings)
 
 
 
