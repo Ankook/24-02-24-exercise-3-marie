@@ -7,7 +7,7 @@ root.geometry("300x250+400+200")
 
 root.maxsize(400,300)
 root.resizable(False, False)
-root.title("Programm")
+root.title("3rd exercise")
 
 # UI options
 paddings = {'padx': 5, 'pady': 5}
@@ -25,19 +25,27 @@ def get_names():
     output_file_name = outputFileName_entry.get()
     print('output file name: ' + output_file_name)
     print('name output has ended')
-    #working_with_files(input_file_name, output_file_name)
+    root.destroy()
+    working_with_files(input_file_name, output_file_name)
     #TODO разобраться с асинхронностью здесь
 
-    
-#def working_with_files(input_file_name, output_file_name):
-#    inputFile = open(input_file_name, 'r')
-#
-#    for line in inputFile:
-#        line = line.translate(str.maketrans('', '', string.punctuation))
-#
-#
-#
-#   ouputFile = open(output_file_name, 'w')
+
+def working_with_files(input_file_name, output_file_name):
+    input_file = open(input_file_name, 'r')
+    output_file = open(output_file_name, 'w')
+
+    for line in input_file:
+        line = line.translate(str.maketrans('', '', string.punctuation))
+        line = line.lower()
+        output_file.writelines([line])
+    input_file.close()
+    output_file.close()
+    print('This program has finished working')
+
+
+
+
+
 
 
 
@@ -67,5 +75,5 @@ btn.grid(column=1, columnspan=2, row=2, sticky=S, **paddings)
 root.mainloop()
 
 
-if __name__ == '__main__':
-    print('Hello!');
+#if __name__ == '__main__':
+
