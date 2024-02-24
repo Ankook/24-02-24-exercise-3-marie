@@ -14,14 +14,21 @@ entry_font = {'font': ('Helvetica', 11)}
 root.columnconfigure(0, weight=1)
 root.columnconfigure(1, weight=3)
 
-userName = StringVar()
+inputFileName = StringVar()
+outputFileName = StringVar()
 
-username_label = ttk.Label(root, text="Username:")
-username_label.grid(column=0, row=0, sticky=W, **paddings)
+inputFileName_label = ttk.Label(root, text="Input file:")
+inputFileName_label.grid(column=0, row=0, sticky=W, **paddings)
 
-username_entry = ttk.Entry(root, textvariable=userName, **entry_font)
-username_entry.grid(column=1, row=0, sticky=E, **paddings)
-#TOO RENAME COLOUMNS
+inputFileName_entry = ttk.Entry(root, textvariable=inputFileName, **entry_font)
+inputFileName_entry.grid(column=1, row=0, sticky=E, **paddings)
+
+outputFileName_label = ttk.Label(root, text="Input file:")
+outputFileName_label.grid(column=0, row=1, sticky=W, **paddings)
+
+outputFileName_entry = ttk.Entry(root, textvariable=outputFileName, **entry_font)
+outputFileName_entry.grid(column=1, row=1, sticky=E, **paddings)
+
 
 root.mainloop()
 
